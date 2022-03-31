@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  cryptocurrency: one
+  price: 1.5
+  operator: MyString
+
+two:
+  user: two
+  cryptocurrency: two
+  price: 1.5
+  operator: MyString

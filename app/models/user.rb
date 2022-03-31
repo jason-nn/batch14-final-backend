@@ -9,4 +9,5 @@ class User < ApplicationRecord
   end
 
   has_many :purchases, dependent: :destroy
+  has_many :alerts, dependent: :destroy
 end

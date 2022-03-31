@@ -4,4 +4,5 @@ class Cryptocurrency < ApplicationRecord
   validates :price, presence: true
 
   has_many :purchases, dependent: :destroy
+  has_many :alerts, dependent: :destroy
 end
