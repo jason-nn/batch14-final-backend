@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     else
       render json: {
                errors: {
-                 'email or password' => ['is invalid'],
+                 'user' => ['is invalid'],
                },
              },
              status: :unprocessable_entity
