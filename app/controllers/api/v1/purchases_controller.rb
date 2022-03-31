@@ -2,7 +2,7 @@ class Api::V1::PurchasesController < ApplicationController
   before_action :authenticate_user!
 
   def all
-    render json: { data: Purchase.where(user_id: current_user_id) }
+    render json: Purchase.where(user_id: current_user.id)
   end
 
   def create
@@ -11,12 +11,7 @@ class Api::V1::PurchasesController < ApplicationController
     if purchase.save
       head :ok
     else
-      render json: {
-               errors: {
-                 'purchase' => ['is invalid'],
-               },
-             },
-             status: :unprocessable_entity
+      head :unprocessable_entity
     end
   end
 

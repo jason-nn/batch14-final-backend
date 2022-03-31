@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   get '/api/v1/purchases', to: 'api/v1/purchases#all'
   post '/api/v1/purchases', to: 'api/v1/purchases#create'
+
+  get '/api/v1/alerts', to: 'api/v1/alerts#all'
+  post '/api/v1/alerts', to: 'api/v1/alerts#create'
 end

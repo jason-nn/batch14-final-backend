@@ -2,7 +2,7 @@ class Api::V1::AlertsController < ApplicationController
   before_action :authenticate_user!
 
   def all
-    render json: { data: Alert.where(user_id: current_user_id) }
+    render json: Alert.where(user_id: current_user.id)
   end
 
   def create
@@ -11,12 +11,7 @@ class Api::V1::AlertsController < ApplicationController
     if alert.save
       head :ok
     else
-      render json: {
-               errors: {
-                 'alert' => ['is invalid'],
-               },
-             },
-             status: :unprocessable_entity
+      head :unprocessable_entity
     end
   end
 
