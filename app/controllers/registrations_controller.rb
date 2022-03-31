@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     if user.save
       token = user.generate_jwt
-      render json: { token: token.to_json, email: user.email, id: user.id }
+      render json: { user_email: user.email, user_id: user.id, token: token }
     else
       head :unprocessable_entity
     end

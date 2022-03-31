@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
     if user && user.valid_password?(user_params[:password])
       token = user.generate_jwt
-      render json: { token: token.to_json, email: user.email, id: user.id }
+      render json: { user_email: user.email, user_id: user.id, token: token }
     else
       head :unprocessable_entity
     end

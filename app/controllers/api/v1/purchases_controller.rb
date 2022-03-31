@@ -2,14 +2,14 @@ class Api::V1::PurchasesController < ApplicationController
   before_action :authenticate_user!
 
   def all
-    render json: Purchase.where(user_id: current_user.id)
+    render json: Purchase.where(user_id: @current_user_id)
   end
 
   def create
-    purchase = Purchase.new(purchase_params)
+    purchase = current_user.purchases.new(purchase_params)
 
     if purchase.save
-      head :ok
+      render json: purchase
     else
       head :unprocessable_entity
     end
@@ -18,8 +18,6 @@ class Api::V1::PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params
-      .require(:purchase)
-      .permit(:user_id, :cryptocurrency_id, :price, :quantity)
+    params.require(:purchase).permit(:cryptocurrency_id, :price, :quantity)
   end
 end
