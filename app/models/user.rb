@@ -7,4 +7,6 @@ class User < ApplicationRecord
       Rails.application.secrets.secret_key_base,
     )
   end
+
+  has_many :purchases, dependent: :destroy
 end
