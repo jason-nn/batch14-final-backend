@@ -42,3 +42,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rack-cors'
 
 gem 'coingecko_ruby'
+
+gem 'devise'
+gem 'devise-jwt'
