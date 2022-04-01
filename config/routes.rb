@@ -13,4 +13,9 @@ Rails.application.routes.draw do
 
   get '/api/v1/alerts', to: 'api/v1/alerts#all'
   post '/api/v1/alerts', to: 'api/v1/alerts#create'
+
+  devise_scope :user do
+    post '/api/v1/sessions', to: 'api/v1/sessions#create'
+    post '/api/v1/registrations', to: 'api/v1/registrations#create'
+  end
 end
