@@ -43,3 +43,5 @@ gem 'rack-cors'
 
 gem 'devise'
 gem 'devise-jwt'
+
+gem 'rest-client', '~> 2.1.0'
