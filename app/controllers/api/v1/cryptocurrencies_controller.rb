@@ -12,7 +12,7 @@ class Api::V1::CryptocurrenciesController < ApplicationController
       render json: Cryptocurrency.find_by(symbol: params[:symbol])
     else
       cryptocurrency = search(params[:symbol])
-      if cryptocurrency['symbol'] == params[:symbol]
+      if cryptocurrency['symbol'].downcase == params[:symbol]
         current_price =
           Cryptocurrency.create(
             name: cryptocurrency['name'],
