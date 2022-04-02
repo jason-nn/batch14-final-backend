@@ -18,6 +18,12 @@ class Api::V1::AlertsController < ApplicationController
     end
   end
 
+  def destroy
+    alert = Alert.find(params[:id])
+    alert.destroy
+    head :ok
+  end
+
   private
 
   def alert_params
