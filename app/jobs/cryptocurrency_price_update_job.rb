@@ -5,9 +5,7 @@ class CryptocurrencyPriceUpdateJob < ApplicationJob
 
   def perform(*args)
     Cryptocurrency.all.each do |cryptocurrency|
-      coin = search(cryptocurrency.symbol)
-      updated_price = price(coin['id'])
-
+      updated_price = price(cryptocurrency.coingecko_id)
       cryptocurrency.update(price: updated_price)
     end
 
@@ -15,11 +13,6 @@ class CryptocurrencyPriceUpdateJob < ApplicationJob
   end
 
   private
-
-  def search(query)
-    url = "#{COINGECKO_API_V3_URL}/search?query=#{query}"
-    JSON.parse(RestClient.get(url).body)['coins'].first
-  end
 
   def price(name)
     url = "#{COINGECKO_API_V3_URL}/simple/price?ids=#{name}&vs_currencies=usd"

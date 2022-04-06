@@ -18,6 +18,7 @@ class Api::V1::CryptocurrenciesController < ApplicationController
             name: cryptocurrency['name'],
             symbol: cryptocurrency['symbol'].downcase,
             price: price(cryptocurrency['id']),
+            coingecko_id: cryptocurrency['id'],
           )
         render json: Cryptocurrency.find_by(symbol: params[:symbol])
       else
