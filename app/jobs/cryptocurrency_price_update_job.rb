@@ -9,7 +9,7 @@ class CryptocurrencyPriceUpdateJob < ApplicationJob
       cryptocurrency.update(price: updated_price)
     end
 
-    self.class.set(wait: 10.minutes).perform_later
+    self.class.set(wait: 5.minutes).perform_later
   end
 
   private
