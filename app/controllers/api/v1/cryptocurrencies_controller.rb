@@ -27,6 +27,11 @@ class Api::V1::CryptocurrenciesController < ApplicationController
     end
   end
 
+  def symbols
+    url = "#{COINGECKO_API_V3_URL}/coins/list"
+    render json: JSON.parse(RestClient.get(url).body).pluck('symbol').uniq
+  end
+
   private
 
   def search(query)

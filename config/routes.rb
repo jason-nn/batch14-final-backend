@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get '/api/v1/cryptocurrencies', to: 'api/v1/cryptocurrencies#all'
+  get '/api/v1/cryptocurrencies/symbols', to: 'api/v1/cryptocurrencies#symbols'
   get '/api/v1/cryptocurrencies/:symbol', to: 'api/v1/cryptocurrencies#find'
 
   get '/api/v1/purchases', to: 'api/v1/purchases#all'
