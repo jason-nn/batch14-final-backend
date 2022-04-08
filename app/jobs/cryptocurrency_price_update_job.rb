@@ -9,6 +9,8 @@ class CryptocurrencyPriceUpdateJob < ApplicationJob
       cryptocurrency.update(price: updated_price)
     end
 
+    ActionCable.server.broadcast 'price_update_channel', Cryptocurrency.all
+
     self.class.set(wait: 5.minutes).perform_later
   end
 

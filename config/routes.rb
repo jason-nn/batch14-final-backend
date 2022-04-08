@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get '/api/v1/alerts', to: 'api/v1/alerts#all'
   post '/api/v1/alerts', to: 'api/v1/alerts#create'
   delete '/api/v1/alerts/:id', to: 'api/v1/alerts#destroy'
+
+  mount ActionCable.server => '/cable'
 end
