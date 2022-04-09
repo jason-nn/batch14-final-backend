@@ -6,6 +6,7 @@ class Api::V1::PurchasesController < ApplicationController
              Purchase
                .where(user_id: @current_user_id)
                .to_json(include: :cryptocurrency)
+               .order(created_at: :desc)
   end
 
   def create
