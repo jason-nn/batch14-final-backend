@@ -8,48 +8,48 @@ hodlr is an app I built to automate the manual process I used to track crypto pr
 
 ## Installation and Setup
 
-```console
+```zsh
 git clone git@github.com:jason-nn/batch14-final-backend.git
 ```
 
-```console
+```zsh
 cd batch14-final-backend
 ```
 
-```console
+```zsh
 bundle install
 ```
 
-```console
+```zsh
 yarn install --check-files
 ```
 
-```console
+```zsh
 bundle exec rails webpacker:install
 ```
 
-```console
+```zsh
 rails db:create
 ```
 
-```console
+```zsh
 rails db:migrate
 ```
 
-```console
+```zsh
 rails server -p 4000
 ```
 
 ## Routes
 
-```console
+```zsh
 post api/v1/sessions
 
 # receives user email and password
 # returns user password, user id, and a token to be used for authorization
 ```
 
-```console
+```zsh
 post api/v1/registrations
 
 # receives user email and password
@@ -57,31 +57,31 @@ post api/v1/registrations
 # returns user password, user id, and a token to be used for authorization
 ```
 
-```console
+```zsh
 get api/v1/cryptocurrencies
 
 # returns all cryptocurrency data
 ```
 
-```console
+```zsh
 get api/v1/cryptocurrencies/symbols
 
 # returns all symbols from coingecko database
 ```
 
-```console
+```zsh
 get api/v1/cryptocurrencies/:symbol
 
 # returns data for cryptocurrency with symbol :symbol
 ```
 
-```console
+```zsh
 get api/v1/purchases
 
 # returns data for all purchases that belong to the current user
 ```
 
-```console
+```zsh
 post api/v1/purchases
 
 # receives cryptocurrency id, price, and quantity
@@ -89,13 +89,13 @@ post api/v1/purchases
 # returns data for created purchase
 ```
 
-```console
+```zsh
 get api/v1/alerts
 
 # returns data for all alerts that belong to the current user
 ```
 
-```console
+```zsh
 post api/v1/alerts
 
 # receives cryptocurrency id, price, and quantity
@@ -103,7 +103,7 @@ post api/v1/alerts
 # returns data for created alert
 ```
 
-```console
+```zsh
 delete api/v1/alerts/:id
 
 # deletes alert with id :id
