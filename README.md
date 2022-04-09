@@ -4,7 +4,7 @@
 
 This is the repository for a rails app that serves as the backend for hodlr
 
-Hodlr is an app I built to automate the manual process I used to track crypto prices against my average buying price. While the average buying price calculation and acquisition cost calculations could be automated with google sheets or excel formulas, I had to manually update the coin prices every day by copying and pasting the prices. I built hodlr so I would no longer have to do that. hodlr is able to automate not only the calculations, but the current price updates as well.
+hodlr is an app I built to automate the manual process I used to track crypto prices against my average buying price. While the average buying price and acquisition cost calculations could be automated with Google Sheets or Excel formulas, I had to manually update the coin prices every day by copying and pasting the prices. I built hodlr so I would no longer have to do that. hodlr is able to automate not only the calculations, but the current price updates as well.
 
 ## Installation and Setup
 
@@ -60,7 +60,7 @@ post api/v1/registrations
 ```console
 get api/v1/cryptocurrencies
 
-# returns all cryptocurrency data in the database
+# returns all cryptocurrency data
 ```
 
 ```console
@@ -78,7 +78,7 @@ get api/v1/cryptocurrencies/:symbol
 ```console
 get api/v1/purchases
 
-# returns data for all the user's purchases
+# returns data for all purchases that belong to the current user
 ```
 
 ```console
@@ -92,7 +92,7 @@ post api/v1/purchases
 ```console
 get api/v1/alerts
 
-# returns data for all the user's alerts
+# returns data for all alerts that belong to the current user
 ```
 
 ```console
