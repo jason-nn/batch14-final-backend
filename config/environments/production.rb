@@ -35,13 +35,10 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
-  config.web_socket_server_url = 'wss://hodlrbyjason.herokuapp.com/cable'
   config.action_cable.url = 'wss://hodlrbyjason.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = %w[
-    https://hodlrbyjason.herokuapp.com
-    http://hodlrbyjason.herokuapp.com
-    https://hodlr.vercel.app/
-    http://hodlr.vercel.app/
+  config.action_cable.allowed_request_origins = [
+    'https://hodlr.vercel.app',
+    %r{http:\/\/hodlr.vercel.app.*},
   ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
