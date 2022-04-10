@@ -39,6 +39,8 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = %w[
     https://hodlrbyjason.herokuapp.com
     http://hodlrbyjason.herokuapp.com
+    https://hodlr.vercel.app/
+    http://hodlr.vercel.app/
   ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
