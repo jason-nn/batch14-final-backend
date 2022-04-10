@@ -7,4 +7,3 @@ test:
 production:
   adapter: redis
   url: redis://redistogo:448acdefd3167540ea575c4a2b19f2b6@sole.redistogo.com:10713/
-  channel_prefix: batch14_final_backend_production
